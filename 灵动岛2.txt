@@ -1,0 +1,88 @@
+local ts = game:GetService("TweenService")
+local rs = game:GetService("RunService")
+local input = game:GetService("UserInputService")
+local Player = game:GetService("Players").LocalPlayer
+
+
+------------------------------------------------------
+--参数调节
+local banbeng = "0.02"  --版本号
+local Fpstime = 0.5 --FPS刷新时间
+
+
+
+------------------------------------------------------
+--创造主要GUI界面
+local Gui = Instance.new("ScreenGui")
+Gui.Name = "lingdongdao_make_in_China"
+Gui.Parent = Player.PlayerGui
+Gui.IgnoreGuiInset = true
+
+local lingdongdaoGUI = Instance.new("Frame")
+lingdongdaoGUI.Name = "lingdongdao"
+lingdongdaoGUI.AnchorPoint = Vector2.new(0.5,0.5)
+lingdongdaoGUI.Position = UDim2.new(0.5,0,0,33)
+lingdongdaoGUI.Size = UDim2.new(0,165,0,43)
+lingdongdaoGUI.BorderSizePixel = 0
+lingdongdaoGUI.ClipsDescendants = true
+
+local yuanrun = Instance.new("UICorner")
+yuanrun.Parent = lingdongdaoGUI
+yuanrun.CornerRadius = UDim.new(1,0)
+
+lingdongdaoGUI.BackgroundColor3 = Color3.new(0,0,0)
+lingdongdaoGUI.BackgroundTransparency = 0.5
+lingdongdaoGUI.Parent = Gui
+
+local Fps = Instance.new("TextLabel")
+Fps.Name = "Fps"
+Fps.Text = "FPS:-1"
+Fps.TextColor3 = Color3.new(1, 0, 0)
+Fps.AnchorPoint = Vector2.new(0,0.5)
+--帧率
+local RunService = game:GetService("RunService")
+
+-- 帧率统计配置
+local frameCount = 0
+local fps = 0
+local lastTime = os.clock()
+local sampleInterval = Fpstime -- 采样间隔(秒)
+
+local function advancedFPSMonitor()
+	frameCount = frameCount + 1
+
+	local currentTime = os.clock()
+	local elapsedTime = currentTime - lastTime
+
+	if elapsedTime >= sampleInterval then
+		fps = frameCount / elapsedTime
+
+
+		-- 输出详细的帧率统计
+		Fps.Text = (string.format("FPS:%.0f", fps))
+		if fps > 30 then
+			Fps.TextColor3 = Color3.new(0, 1, 0) -- 绿色
+		elseif fps < 30 and fps > 20 then
+			Fps.TextColor3 = Color3.new(1, 1, 0) -- 黄色
+		elseif fps < 20 and fps > 10 then
+			Fps.TextColor3 = Color3.new(1, 0.607843, 0.235294) -- 红色 then
+		else
+			Fps.TextColor3 = Color3.new(1, 0, 0) 
+		end
+		frameCount = 0
+		lastTime = currentTime
+	end
+end
+
+-- 启动高级FPS监控
+RunService.RenderStepped:Connect(advancedFPSMonitor)
+
+Fps.Size = UDim2.new(0,155,1,0)
+Fps.Position = UDim2.new(0,10,0.5,0)
+Fps.BackgroundTransparency = 1
+Fps.TextScaled = true
+Fps.TextXAlignment = Enum.TextXAlignment.Left
+Fps.Parent = lingdongdaoGUI
+
+
+
