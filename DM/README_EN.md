@@ -11,4 +11,4 @@ English | [简体中文](README_CN.md)
 > 
 > **Prohibition of Infringement**: Reverse engineering is strictly prohibited.
 > 
-> ⚠️ **Disclaimer**: Running any script in this series indicates that you have read, understood, and agreed to all the above terms. If you disagree, please stop using them immediately.
+> **Disclaimer**: Running any script in this series indicates that you have read, understood, and agreed to all the above terms. If you disagree, please stop using them immediately.
