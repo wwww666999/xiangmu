@@ -1,7 +1,6 @@
 [English](README_EN.md) | 简体中文
 
 > **注意**：运行环境
-
 > DM系列绝大部分脚本依赖执行器（Executor）提供的函数，**无法**在原生 Roblox 或 Roblox Studio 中完全正常运行。
 >
 >  **代码保护**：为防止被篡改及未经授权的二次分发，所有脚本均已进行混淆处理。若因您的执行器 UNC（Unified Naming Convention）兼容性过低导致加载失败，我们深表歉意。
