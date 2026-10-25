@@ -1,4 +1,4 @@
-English | [简体中文](README.md)
+English | [简体中文](README_CN.md)
 
 > **Note**: Runtime Environment
 > Most scripts in the DM series rely on functions provided by third-party executors and **cannot** run fully in vanilla Roblox or Roblox Studio.
