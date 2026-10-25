@@ -1,3 +1,4 @@
+[English](Readme_EN.md) | 简体中文
 > [!NOTE]
 > **运行环境**：DM系列绝大部分脚本依赖执行器（Executor）提供的函数，**无法**在原生 Roblox 或 Roblox Studio 中完全正常运行。
 > 
